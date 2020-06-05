@@ -1,10 +1,19 @@
 # GDM_LoginBackgroundChange
-A correct way to change gdm login screen's background into user's image.
+### A correct way to change gdm login screen's background into user's image.
 
-$ sh extractgst.sh
-$ cd shell-theme/theme
-$ vim gnome-shell-theme.gresource.xml
->===============gnome-shell-theme.gresource.xml===============
+```
+sh extractgst.sh
+```
+```
+cd shell-theme/theme
+```
+```
+vim gnome-shell-theme.gresource.xml
+```
+```
+gnome-shell-theme.gresource.xml
+```
+```
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
   <gresource prefix="/org/gnome/shell/theme">
@@ -35,16 +44,24 @@ $ vim gnome-shell-theme.gresource.xml
     <file>toggle-on-intl.svg</file>
   </gresource>
 </gresources>
-=============================================================>
+```
+```
 $ vim gnome-shell.css
->===============gnome-shell.css===============================
-(Find and edit #lockDialogGroup like below and edit background-size):
+```
+> (Find and edit #lockDialogGroup like below and edit background-size):
+```
 #lockDialogGroup {
   background: #2e3436 url(LoginBackground.png);
   background-size: 1600px 900px;
   background-repeat: no-repeat;
 }
-=============================================================>
+```
+```
 $ glib-compile-resources gnome-shell-theme.gresource.xml
+```
+```
 $ sudo cp gnome-shell-theme.gresource /usr/share/gnome-shell
+```
+```
 $ reboot
+```
